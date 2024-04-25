@@ -1,0 +1,175 @@
+.cabecera__container{
+    display: flex;
+    justify-content: space-between; /**Espaciado entre elementos*/
+    align-items: center; /**Alineación entre elementos en medio*/
+    position: fixed; /**posicion fija, que no se mueve*/
+    top: 0 ;
+    
+}
+
+.cabecera__buscar__item{
+    display: none;
+}
+
+.menu__container{
+    display: flex;
+    position: fixed;
+    bottom: 0%;
+    height: 75px;
+    width: 100%;
+    justify-content: space-around ;
+
+    
+}
+.menu__lista{
+    display: flex;
+    height: 100%;
+    
+}
+
+.menu__lista li{
+    align-self: center;
+}
+
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/*? :nth-child() accede a la lista para ocultar lo que se desea 
+ a la lista vas a ocultarme del 2 al 4 
+*/
+/*TODO: PSEUDOCLASES */
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+/** Esto significa que todo lo que pongamos dentro de las llaves
+**  solo se mostrara con al menos esos pixeles de ancho
+**  Si es menor no se aplican */
+
+
+
+/*? SECCION VIDEOS */
+
+    .videos__item{
+        height: 303px;
+        width: 280px;
+        
+    }
+
+
+    .videos__container{
+        display: flex;
+        flex-wrap: wrap; /*? se distribu8llen en todo el contenedor */
+        justify-content: space-around; /**Espaciado entre elementos*/
+        align-items: center; /**Alineación entre elementos en medio*/
+        
+        /** La propiedad flex-grow se utiliza para expandir elementos
+        ** proporcionalmente según el espacio disponible en un contenedor.  */
+        flex-grow: 1;
+    }
+
+
+
+@media (min-width:834px) {
+
+    /*? Cabecera */
+    .cabecera__buscar__item{
+        display: block;
+    }
+
+    /*? FOOTER */
+    .rodapie__container{
+        justify-content: space-between; /**Espaciado entre elementos*/
+        /* background-color: aqua; */
+    }
+
+    /* MENU LATERAL PARA PANTALLAS DE TABLETS */
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+    
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+
+}
+
+/*? FOOTER STYLES */
+.rodapie__container{
+    display: flex;
+    flex-flow: column wrap;
+    /* flex-direction: column; /*hacia abajo**/
+   /* flex-wrap: wrap; * Se dividio en dos columnas  */
+    
+}
+    /*? SECCION SUPERIOR  */
+.superior__seccion__container{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: scroll;
+    gap: 15px;
+}
+
+/*? Para dispositivos que tengan al menos ese ancho */
+@media (min-width: 1440px) {
+    
+    .menu__container {
+      width: 240PX;
+      overflow: scroll;
+      display: flex;
+      flex-direction: column;
+    }
+
+        /*TODO: PSEUDOCLASES */
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+
+    display: flex;
+}
+
+    .menu__lista{
+        padding: 20px 17px 20px 15px;
+        gap: 15px;
+    }
+
+    
+     .menu__lista:nth-child(3){
+            flex-direction: column-reverse;
+        }
+    
+
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .videojuegos{
+        order: 3;
+    }
+
+    .peliculas{
+        order: 2;
+    }
+
+    .premium{
+        order: 1;
+    }
+
+
+
+}
